@@ -46,7 +46,7 @@ Ou seja, basicamente o **JOIN** é a junção de duas ou mais colunas de tabelas
 
 O **INNER JOIN** exibe as informações que são **comuns** entre as tabelas. Observe a imagem:
 
-![Imagem Inner Join](https://arquivo.devmedia.com.br/cursos/SQL_2199/inner.png)
+[![inner-join.jpg](https://i.postimg.cc/nLn71jzg/inner-join.jpg)](https://postimg.cc/0zHbkN70)
 
 Como é visivel na imagem, temos um campo de dados comuns, para obtermos essas informações é necessário fazer uso de uma condição chamada **ON**, com ela podemos especificar qual é a coluna comum entre as tabelas. Vamos ver um pouco como é essa sintaxe na prática:
 
