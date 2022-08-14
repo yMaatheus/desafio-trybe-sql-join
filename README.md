@@ -18,6 +18,8 @@
 
 Hoje você vai aprender sobre o **JOIN**, alguns dos seus tipos, e como podemos utilizá-lo para juntar dados relacionados. 😉
 
+![Bem vindo](https://thumbs.gfycat.com/HatefulAllFlycatcher-max-1mb.gif)
+
 ### Você será capaz de:
 
 <!-- #TODO -->
@@ -82,13 +84,11 @@ ON t1.coluna_em_comum = t2.coluna_em_comum;
 
 ⚠️ Atencão! Para acompanhar os comandos e fazer o exercicio de fixação será necessário a utilização do banco de dados [Trybe ~~is cool~~ School](https://sqldeploys.github.io/desafio-join/TRYBE-IS-ChOOL.sql).
 
-No nosso banco de dados temos as seguintes tabelas:
+Algumas tabelas que vamos usar do nosso banco de dados:
 
-[![tabelas](https://i.postimg.cc/437wxPWG/tabelas.png)](https://postimg.cc/t1bFr30v)
+[![teachers-subject-tribes-tables.png](https://i.postimg.cc/J0Mj9c5w/teachers-subject-tribes-tables.png)](https://postimg.cc/KkpKTTWQ)
 
 Vamos exibir o primeiro nome do professor que ensina cada materia:
-
-<!-- TODO Colocar versão sem CONCAT e depois mostrar o com concat -->
 
 ```
 SELECT S.id AS id_da_materia, S.name, T.first_name, T.id AS id_do_professor
@@ -114,10 +114,11 @@ Exemplo de saida:
 | 3             | Back-end              | Djo        | 4
 
 #### Pra fixar:
-<!-- #TODO -->
-1. Faça uma query que exiba o nome da materia e o primeiro nome do professor
-2. Faça uma query que exiba o nome da materia e o sobrenome do professor
-3. 
+1. Faça uma query que exiba o **nome da materia** e o **primeiro nome do professor**:
+2. Faça uma query que exiba o **nome da materia** e o **sobrenome do professor**:
+3. Faça uma query que exiba o **nome do professor** e a **tribo** que ele pertence.
+4. Faça uma query que exiba o **nome da materia** e o **nome completo do professor**:
+5. Faça uma query que exiba o **nome completo do professor** e a **tribo** que ele pertence.
 
 ### Como utilizar o LEFT JOIN e o RIGHT JOIN
 
