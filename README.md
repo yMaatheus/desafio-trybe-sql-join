@@ -130,7 +130,7 @@ vai exibir os dados da tabela da esquerda independente de haver algum dado em co
 Vale salientar que a tabela referente ao **LEFT JOIN** sempre será a após o **FROM**, mas para ficar claro a tradução de **LEFT** é esquerda e **RIGHT** direita. Veja abaixo como funciona na prática:
 
 Essas são as tabelas do nosso banco de dados, vamos trabalhar com algumas delas abaixo:
-[![all-tables.png](https://i.postimg.cc/02CgWQXM/all-tables.png)](https://postimg.cc/qzgZgkT4)
+[![all-tables.png](https://i.postimg.cc/MGb4c9cF/all-tables.png)](https://postimg.cc/jW2vmQ4H)
 
 Vamos montar uma query que exibe o nome das pessoas estudantes de nossa escola e seu respectivo endereço utilizando o **LEFT JOIN**:
 
@@ -177,6 +177,7 @@ Exemplo de saida:
 [![saida-right-join.png](https://i.postimg.cc/bwYPppcD/saida-right-join.png)](https://postimg.cc/qzFSGf74)
 
 #### Pra fixar:
+
 
 
 ### O que é SELF JOIN e quando utilizar
