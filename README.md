@@ -130,7 +130,7 @@ vai exibir os dados da tabela da esquerda independente de haver algum dado em co
 Vale salientar que a tabela referente ao **LEFT JOIN** sempre será a após o **FROM**, mas para ficar claro a tradução de **LEFT** é esquerda e **RIGHT** direita. Veja abaixo como funciona na prática:
 
 Essas são as tabelas do nosso banco de dados, vamos trabalhar com algumas delas abaixo:
-[![all-tables.png](https://i.postimg.cc/wxXW6NkM/all-tables.png)](https://postimg.cc/dD0R6Lpc)
+[![all-tables.png](https://i.postimg.cc/02CgWQXM/all-tables.png)](https://postimg.cc/qzgZgkT4)
 
 Vamos montar uma query que exibe o nome das pessoas estudantes de nossa escola e seu respectivo endereço utilizando o **LEFT JOIN**:
 
