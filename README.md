@@ -111,7 +111,7 @@ Exemplo de saida:
 | 4             | Ciência da Computação | Matheus    | 1
 | 1             | Fundamentos           | Rafael     | 2
 | 2             | Front-end             | Alberto    | 3
-| 3             | Back-end              | Djo        | 4
+| 3             | Back-end              | DjoDjo     | 4
 
 #### Pra fixar:
 1. Faça uma query que exiba o **nome da materia** e o **primeiro nome do professor**:
@@ -126,6 +126,57 @@ Como foi visto o **INNER JOIN** vai buscar as informações em comum que existem
 vai exibir os dados da tabela da esquerda independente de haver algum dado em comum com a tabela da direita. Observe a imagem abaixo:
 
 [![left-join.png](https://i.postimg.cc/P5YN9t9H/left-join.png)](https://postimg.cc/ZWYTyhJs)
+
+Vale salientar que a tabela referente ao **LEFT JOIN** sempre será a após o **FROM**, mas para ficar claro a tradução de **LEFT** é esquerda e **RIGHT** direita. Veja abaixo como funciona na prática:
+
+Essas são as tabelas do nosso banco de dados, vamos trabalhar com algumas delas abaixo:
+[![all-tables.png](https://i.postimg.cc/wxXW6NkM/all-tables.png)](https://postimg.cc/dD0R6Lpc)
+
+Vamos montar uma query que exibe o nome das pessoas estudantes de nossa escola e seu respectivo endereço utilizando o **LEFT JOIN**:
+
+```
+SELECT S.first_name, S.address_id, A.cep, A.street, A.number
+FROM school.studants S
+LEFT JOIN school.adresses A ON S.address_id = A.id;
+```
+
+Exemplo de saida:
+
+[![saida-left-join.png](https://i.postimg.cc/W1zGBq3d/saida-left-join.png)](https://postimg.cc/G40TY2vR)
+
+Como é possivel observar no exemplo acima, algumas pessoas estudantes possuem o **address_id** com valor **null**, só é possivel
+vizualizar isso porque estamos utilizando o **LEFT JOIN**, vamos substituir o **LEFT** por **INNER** na nossa query e vamos comparar os
+resultados:
+
+```
+SELECT S.first_name, S.address_id, A.cep, A.street, A.number
+FROM school.studants S
+INNER JOIN school.adresses A ON S.address_id = A.id;
+```
+
+Exemplo de saida:
+
+[![saida-compare-left-inner-join.png](https://i.postimg.cc/9fKHd94Z/saida-compare-left-inner-join.png)](https://postimg.cc/Z98QZCx5)
+
+Comparando os resultados é possivel observar que algumas pessoas estudantes foram ocultadas, essa é a diferença do **INNER JOIN** para **LEFT JOIN**.
+
+Agora vamos para o **RIGHT JOIN**, veja a ilustração abaixo:
+
+[![right-join.jpg](https://i.postimg.cc/Px5vwBwP/right-join.jpg)](https://postimg.cc/sBb2FHKr)
+
+Como é ilustrado o **RIGHT JOIN** é o oposto do **LEFT JOIN**, ele representa a tabela da direita, vamos executar a mesma query usando o **RIGHT JOIN**:
+
+```
+SELECT S.first_name, S.address_id, A.cep, A.street, A.number
+FROM school.studants S
+RIGHT JOIN school.adresses A ON S.address_id = A.id;
+```
+
+Exemplo de saida:
+
+[![saida-right-join.png](https://i.postimg.cc/bwYPppcD/saida-right-join.png)](https://postimg.cc/qzFSGf74)
+
+#### Pra fixar:
 
 
 ### O que é SELF JOIN e quando utilizar
