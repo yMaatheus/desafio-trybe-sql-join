@@ -177,8 +177,10 @@ Exemplo de saida:
 [![saida-right-join.png](https://i.postimg.cc/bwYPppcD/saida-right-join.png)](https://postimg.cc/qzFSGf74)
 
 #### Pra fixar:
-
-
+1. Faça uma query que exiba o **nome de todas as pessoas estudantes** e seu **número de telefone**
+2. Faça uma query que exiba o **nome de todos os professores** e seu **número de telefone**
+3. Faça uma query que exiba **todos os numeros de telefone** com o **nome do professor** responsável por aquele número.
+4. Faça uma query que exiba **todos os numeros de telefone** com o **nome da pessoa estudante** responsável por aquele número.
 
 ### O que é SELF JOIN e quando utilizar
 
@@ -190,7 +192,15 @@ Vamos bater um papo sobre SQL? Hora da aula ao vivo! Vamos para o Slack, onde o 
 
 ### Agora na prática
 
+1.
+2.
+3.
+4.
+5.
+
 ### Bônus
+
+6.
 
 ## **Recursos Adicionais**
 

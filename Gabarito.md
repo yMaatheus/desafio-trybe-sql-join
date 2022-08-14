@@ -50,6 +50,56 @@ FROM school.teachers T
 INNER JOIN school.tribes TR ON T.id = TR.teacher_id;
 ```
 
+#### **LEFT JOIN** e **RIGHT JOIN**
+
+1. Exibe o nome de todas as pessoas esutantes com número de telefone:
+
+```
+SELECT S.first_name AS pessoa_estudante, P.phone AS telefone
+FROM school.studants S
+LEFT JOIN school.phones P ON S.phone_id = P.id;
+```
+
+2. Exibe o nome de todos os professores com número de telefone:
+
+```
+SELECT T.first_name AS nome_professor, P.phone AS telefone
+FROM school.teachers T
+LEFT JOIN school.phones P ON T.phone_id = P.id;
+```
+
+3. Exibe todos os números de telefone com o nome do respectivo professor:
+
+```
+SELECT T.first_name AS nome_professor, P.phone AS telefone
+FROM school.teachers T
+RIGHT JOIN school.phones P ON T.phone_id = P.id;
+```
+
+também pode ser feito assim:
+
+```
+SELECT T.first_name AS nome_professor, P.phone
+FROM school.phones P
+LEFT JOIN school.teachers T ON P.id = T.phone_id;
+```
+
+4. Exibe todos os números de telefone com o nome da pessoa estudante remetente:
+
+```
+SELECT S.first_name AS pessoa_estudante, P.phone AS telefone
+FROM school.studants S
+RIGHT JOIN school.phones P ON S.phone_id = P.id;
+```
+
+também pode ser feito assim:
+
+```
+SELECT S.first_name AS pessoa_estudante, P.phone AS telefone
+FROM school.phones P
+LEFT JOIN school.studants S ON P.id = S.phone_id;
+```
+
 ### Exercicios:
 
 
