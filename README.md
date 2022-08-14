@@ -48,7 +48,7 @@ O **INNER JOIN** exibe as informações que são **comuns** entre as tabelas. Ob
 
 [![inner-join.jpg](https://i.postimg.cc/nLn71jzg/inner-join.jpg)](https://postimg.cc/0zHbkN70)
 
-Como é visivel na imagem, temos um campo de dados comuns, para obtermos essas informações é necessário fazer uso de uma condição chamada **ON**, com ela podemos especificar qual é a coluna comum entre as tabelas. Vamos ver um pouco como é essa sintaxe na prática:
+Como é visível na imagem, temos um campo de dados comuns, para obtermos essas informações é necessário fazer uso de uma condição chamada **ON**, com ela podemos especificar qual é a coluna comum entre as tabelas. Vamos ver um pouco como é essa sintaxe na prática:
 
 ```
 SELECT tabela1.coluna1, tabela2.coluna2
@@ -60,7 +60,7 @@ ON tabela1.coluna_em_comum1 = tabela2.coluna_em_comum2;
 *A tradução desse comando ficaria: Selecione a coluna1 da tabela1, a coluna2 da tabela2 vindo da tabela1 juntando com a tabela2
 onde a coluna_em_comum1 da tabela1 é igual a coluna_em_comum2 da tabela2*
 
-Você consegue perceber quantas vezes precisamos dizer tabela1 e tabela2? Não é uma boa pratica fazermos isso, para isso temos um aliado, ou melhor, **alias**. Mas afinal, o que é um *alias*? Um alias é um apelido que podemos dar a uma tabela, é como chamar uma pessoa de nome José de Zé. Veja o exemplo usando o **AS**:
+Você consegue perceber quantas vezes precisamos dizer tabela1 e tabela2? Não é uma boa prática fazermos isso, para isso temos um aliado, ou melhor, **alias**. Mas afinal, o que é um *alias*? Um alias é um apelido que podemos dar a uma tabela, é como chamar uma pessoa de nome José de Zé. Veja o exemplo usando o **AS**:
 
 ```
 SELECT t1.coluna, t2.coluna
@@ -69,7 +69,7 @@ INNER JOIN tabela2 AS t2
 ON t1.coluna_em_comum = t2.coluna_em_comum;
 ```
 
-Também é possivel omitir o **AS**:
+Também é possível omitir o **AS**:
 
 ```
 SELECT t1.coluna, t2.coluna
@@ -86,7 +86,7 @@ Algumas tabelas que vamos usar do nosso banco de dados:
 
 [![teachers-subject-tribes-tables.png](https://i.postimg.cc/J0Mj9c5w/teachers-subject-tribes-tables.png)](https://postimg.cc/KkpKTTWQ)
 
-Vamos exibir o primeiro nome do professor que ensina cada materia:
+Vamos exibir o primeiro nome do professor que ensina cada matéria:
 
 ```
 SELECT S.id AS id_da_materia, S.name, T.first_name, T.id AS id_do_professor
@@ -102,7 +102,7 @@ FROM school.subjects S
 INNER JOIN school.teachers T ON S.teacher_id = T.id;
 ```
 
-Exemplo de saida:
+Exemplo de saída:
 
 | id_da_materia | name                  | first_name | id_do_professor
 | :-----------: | :-------------------: | :--------: | :-------------:
@@ -112,10 +112,10 @@ Exemplo de saida:
 | 3             | Back-end              | DjoDjo     | 4
 
 #### Pra fixar:
-1. Faça uma query que exiba o **nome da materia** e o **primeiro nome do professor**:
-2. Faça uma query que exiba o **nome da materia** e o **sobrenome do professor**:
+1. Faça uma query que exiba o **nome da matéria** e o **primeiro nome do professor**:
+2. Faça uma query que exiba o **nome da matéria** e o **sobrenome do professor**:
 3. Faça uma query que exiba o **nome do professor** e a **tribo** que ele pertence.
-4. Faça uma query que exiba o **nome da materia** e o **nome completo do professor**:
+4. Faça uma query que exiba o **nome da matéria** e o **nome completo do professor**:
 5. Faça uma query que exiba o **nome completo do professor** e a **tribo** que ele pertence.
 
 ### Como utilizar o LEFT JOIN e o RIGHT JOIN
@@ -126,6 +126,8 @@ vai exibir os dados da tabela da esquerda independente de haver algum dado em co
 [![left-join.png](https://i.postimg.cc/P5YN9t9H/left-join.png)](https://postimg.cc/ZWYTyhJs)
 
 Vale salientar que a tabela referente ao **LEFT JOIN** sempre será a após o **FROM**, mas para ficar claro a tradução de **LEFT** é esquerda e **RIGHT** direita. Veja abaixo como funciona na prática:
+
+<!-- TODO Essa parte ficou um pouco confusa -->
 
 Essas são as tabelas do nosso banco de dados, vamos trabalhar com algumas delas abaixo:
 [![all-tables.png](https://i.postimg.cc/MGb4c9cF/all-tables.png)](https://postimg.cc/jW2vmQ4H)
@@ -138,12 +140,12 @@ FROM school.studants S
 LEFT JOIN school.adresses A ON S.address_id = A.id;
 ```
 
-Exemplo de saida:
+Exemplo de saída:
 
 [![saida-left-join.png](https://i.postimg.cc/W1zGBq3d/saida-left-join.png)](https://postimg.cc/G40TY2vR)
 
-Como é possivel observar no exemplo acima, algumas pessoas estudantes possuem o **address_id** com valor **null**, só é possivel
-vizualizar isso porque estamos utilizando o **LEFT JOIN**, vamos substituir o **LEFT** por **INNER** na nossa query e vamos comparar os
+Como é possível observar no exemplo acima, algumas pessoas estudantes possuem o **address_id** com valor **null**, só é possível
+visualizar isso porque estamos utilizando o **LEFT JOIN**, vamos substituir o **LEFT** por **INNER** na nossa query e vamos comparar os
 resultados:
 
 ```
@@ -152,11 +154,11 @@ FROM school.studants S
 INNER JOIN school.adresses A ON S.address_id = A.id;
 ```
 
-Exemplo de saida:
+Exemplo de saída:
 
 [![saida-compare-left-inner-join.png](https://i.postimg.cc/9fKHd94Z/saida-compare-left-inner-join.png)](https://postimg.cc/Z98QZCx5)
 
-Comparando os resultados é possivel observar que algumas pessoas estudantes foram ocultadas, essa é a diferença do **INNER JOIN** para **LEFT JOIN**.
+Comparando os resultados é possível observar que algumas pessoas estudantes foram ocultadas, essa é a diferença do **INNER JOIN** para **LEFT JOIN**.
 
 Agora vamos para o **RIGHT JOIN**, veja a ilustração abaixo:
 
@@ -170,19 +172,21 @@ FROM school.studants S
 RIGHT JOIN school.adresses A ON S.address_id = A.id;
 ```
 
-Exemplo de saida:
+Exemplo de saída:
 
 [![saida-right-join.png](https://i.postimg.cc/bwYPppcD/saida-right-join.png)](https://postimg.cc/qzFSGf74)
 
+<!-- TODO Talvez fazer um comentário sobre saida do right join -->
 #### Pra fixar:
 1. Faça uma query que exiba o **nome de todas as pessoas estudantes** e seu **número de telefone**
 2. Faça uma query que exiba o **nome de todos os professores** e seu **número de telefone**
-3. Faça uma query que exiba **todos os numeros de telefone** com o **nome do professor** responsável por aquele número.
-4. Faça uma query que exiba **todos os numeros de telefone** com o **nome da pessoa estudante** responsável por aquele número.
+3. Faça uma query que exiba **todos os números de telefone** com o **nome do professor** responsável por aquele número.
+4. Faça uma query que exiba **todos os números de telefone** com o **nome da pessoa estudante** responsável por aquele número.
 
 ### O que é SELF JOIN e quando utilizar
 
 A palavra **SELF** significa você mesmo, isso significa que faremos um **JOIN** na própria tabela que estamos manipulando.
+<!-- TODO Frase acima redundante, escrever melhor. -->
 
 [![homem-aranha-meme.jpg](https://i.postimg.cc/XY43s1Mn/homem-aranha-meme.jpg)](https://postimg.cc/SJTwsrNP)
 
@@ -197,13 +201,15 @@ INNER JOIN school.studants Buddie ON Studant.buddie_id = Buddie.id;
 Siim! Você não viu errado, o **SELF JOIN** na verdade é apenas um **INNER JOIN** na própria tabela. Mas também podemos apenas declarar
 a mesma tabela duas vezes, dessa forma:
 
+<!-- TODO Frase acima redundante, escrever melhor. -->
+
 ```
 SELECT Studant.first_name, Studant.buddie_id, Buddie.first_name
 FROM school.studants Studant, school.studants Buddie
 WHERE Studant.buddie_id = Buddie.id;
 ```
 
-Exemplo de saida:
+Exemplo de saída:
 
 [![saida-self-join.png](https://i.postimg.cc/TY8CMZ3v/saida-self-join.png)](https://postimg.cc/JtqbjYXp)
 
