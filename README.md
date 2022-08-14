@@ -22,11 +22,9 @@ Hoje você vai aprender sobre o **JOIN**, alguns dos seus tipos, e como podemos 
 
 ### Você será capaz de:
 
-<!-- #TODO -->
-- Utilizar JOIN para combinar dados de duas ou mais tabelas;
-- Utilizar INNER JOIN para combinar dados de duas ou mais tabelas;
-- Utilizar LEFT JOIN e RIGHT JOIN para combinar dados de duas ou mais tabelas;
-- Utilizar SELF JOIN para fazer join de uma tabela com ela própria.
+- Combinar dados de duas utilizando **INNER JOIN**;
+- Combinar dados de duas preservando a de uma utilizando **LEFT JOIN** e **RIGHT JOIN**;
+- Utilizar dados de uma mesma tabela utilizando **SELF JOIN**;
 
 ## **Porque isso é importante?**
 

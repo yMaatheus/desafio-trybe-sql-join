@@ -100,6 +100,14 @@ FROM school.phones P
 LEFT JOIN school.studants S ON P.id = S.phone_id;
 ```
 
+#### **SELF JOIN**
+
+1.
+
+```
+
+```
+
 ### Exercicios:
 
 
