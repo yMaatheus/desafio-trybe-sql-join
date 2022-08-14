@@ -184,7 +184,33 @@ Exemplo de saida:
 
 ### O que é SELF JOIN e quando utilizar
 
+A palavra **SELF** significa você mesmo, isso significa que faremos um **JOIN** na própria tabela que estamos manipulando.
 
+[![homem-aranha-meme.jpg](https://i.postimg.cc/XY43s1Mn/homem-aranha-meme.jpg)](https://postimg.cc/SJTwsrNP)
+
+No nosso banco de dados temos uma tabela de estudantes, lá existe uma coluna com nome de **buddie_id**, ela refere-se ao id de outra pessoa estudante, a qual, é sua parceira. Para listar todas as pessoas estudantes com seu respectivo buddie é necessário fazer um **SELF JOIN**. Veja na prática:
+
+```
+SELECT Studant.first_name, Studant.buddie_id, Buddie.first_name
+FROM school.studants Studant
+INNER JOIN school.studants Buddie ON Studant.buddie_id = Buddie.id;
+```
+
+Siim! Você não viu errado, o **SELF JOIN** na verdade é apenas um **INNER JOIN** na própria tabela. Mas também podemos apenas declarar
+a mesma tabela duas vezes, dessa forma:
+
+```
+SELECT Studant.first_name, Studant.buddie_id, Buddie.first_name
+FROM school.studants Studant, school.studants Buddie
+WHERE Studant.buddie_id = Buddie.id;
+```
+
+Exemplo de saida:
+
+[![saida-self-join.png](https://i.postimg.cc/TY8CMZ3v/saida-self-join.png)](https://postimg.cc/JtqbjYXp)
+
+#### Pra fixar:
+1. Exiba o **nome completo** do **estudante** e do seu **parceiro**
 
 ## **Vamos praticar!**
 Vamos bater um papo sobre SQL? Hora da aula ao vivo! Vamos para o Slack, onde o link estará disponível.
