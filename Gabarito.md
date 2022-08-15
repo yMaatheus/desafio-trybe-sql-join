@@ -102,13 +102,97 @@ LEFT JOIN school.studants S ON P.id = S.phone_id;
 
 #### **SELF JOIN**
 
-1.
+1. Exiba o **nome completo** do **estudante** e do seu **parceiro**
 
 ```
-
+SELECT
+ CONCAT(S.first_name, ' ', S.last_name) AS nome_completo_estudante,
+ CONCAT(B.first_name, ' ', B.last_name) AS nome_completo_buddie
+FROM school.studants S
+INNER JOIN school.studants B ON S.buddie_id = B.id;
 ```
 
 ### Exercicios:
 
+#### Agora na prática:
 
+1. Faça uma query que exiba **quantos estudantes** existem por **tribo**.
 
+```
+SELECT TRI.name AS tribo, COUNT(TRI.id) AS quantidade_estudantes FROM school.studants S
+INNER JOIN school.tribes TRI ON S.tribe_id = TRI.id
+GROUP BY TRI.id;
+```
+
+2. Faça uma query que conte **quantas duplas** de **buddies** existem no banco de dados.
+
+```
+SELECT (COUNT(*) / 2) AS quantidades_de_duplas FROM school.studants S
+INNER JOIN school.studants B ON S.buddie_id = B.id;
+```
+
+3. Faça uma query que exiba **nome completo**, **cep**, **rua** e **número de telefone** de professores que **possuem** endereço e telefone.
+
+```
+
+```
+
+4. Faça uma query que exiba **quantos estudantes possuem endereço registrado**.
+
+```
+SELECT COUNT(*) AS quantidade_estudantes_com_endereco FROM school.studants S
+INNER JOIN school.adresses A ON S.address_id = A.id;
+```
+
+5. Faça uma query que exiba o **nome completo do estudante**, **cep**, **rua**, **número**, **cidade** e **estado**.
+
+```
+
+```
+
+6. Faça uma query que exiba **quantos estudantes residem por estado** em **ordem decrescente**.
+
+```
+
+```
+
+7. Faça uma query que exiba o **nome completo**, **cep**, **rua** e **número de telefone** de **todos** os **professores**.
+
+```
+
+```
+
+8. Faça uma query que liste todos os **números de telefone** do banco de dados e caso haja um professor remetente exiba: **número de telefone** e **nome completo** do professor.
+
+```
+
+```
+#### Bônus
+
+9. Faça uma query que exiba o **nome completo do estudante**, sua **tribo**, **número de telefone**, **cep**, **rua**, **cidade**, **estado** e **país**.
+
+```
+SELECT 
+ CONCAT(S.first_name, ' ', S.last_name) AS nome_completo_estudante,
+ TRI.name,
+ P.phone,
+ A.cep,
+ A.street,
+ A.number,
+ C.city,
+ STA.state,
+ CO.country
+FROM school.studants S
+INNER JOIN school.tribes TRI ON S.tribe_id = TRI.id
+INNER JOIN school.phones P ON S.phone_id = P.id
+INNER JOIN school.adresses A ON S.address_id = A.id
+INNER JOIN school.cities C ON A.city_id = C.id
+INNER JOIN school.states STA ON C.state_id = STA.id
+INNER JOIN school.countries CO ON STA.country_id = CO.id;
+```
+
+10. Faça uma query que liste todos os **endereços** do banco de dados e caso haja um estudante remetente exiba **cep**, **rua**, **cidade**  e **nome completo** do estudante.
+
+```
+
+```

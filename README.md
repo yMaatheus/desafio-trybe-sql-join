@@ -501,7 +501,7 @@ Vamos bater um papo sobre SQL? Hora da aula ao vivo! Vamos para o Slack, onde o 
 ⚠️ Atencão! Para fazer o exercicio será necessário a utilização do banco de dados [Trybe ~~is cool~~ School](#na-prática):
 
 1. Faça uma query que exiba **quantos estudantes** existem por **tribo**.
-2. Faça uma query que exiba **quantas duplas** de **buddies** existem no banco de dados.
+2. Faça uma query que conte **quantas duplas** de **buddies** existem no banco de dados.
 3. Faça uma query que exiba **nome completo**, **cep**, **rua** e **número de telefone** de professores que **possuem** endereço e telefone.
 4. Faça uma query que exiba **quantos estudantes possuem endereço registrado**.
 5. Faça uma query que exiba o **nome completo do estudante**, **cep**, **rua**, **número**, **cidade** e **estado**.
