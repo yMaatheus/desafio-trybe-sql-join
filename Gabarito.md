@@ -1,7 +1,12 @@
 ## Sumário
 
 - [Exercicios de Fixação](#exercicios-de-fixação)
+  - [INNER JOIN](#inner-join)
+  - [LEFT JOIN e RIGHT JOIN](#left-join-e-right-join)
+  - [SELF JOIN](#self-join)
 - [Exercicios](#exercicios)
+  - [Agora na prática:](#agora-na-prática)
+  - [Bônus](#bônus)
 
 ## Gabarito
 
