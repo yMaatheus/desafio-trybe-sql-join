@@ -519,3 +519,4 @@ Vamos bater um papo sobre SQL? Hora da aula ao vivo! Vamos para o Slack, onde o 
 - https://www.w3schools.com/sql/sql_join.asp
 - https://javascript.plainenglish.io/sql-understanding-joins-b5888eda54ae
 - https://www.devmedia.com.br/sql-join-entenda-como-funciona-o-retorno-dos-dados/31006
+- https://www.youtube.com/watch?v=165r4qUvp8Q
