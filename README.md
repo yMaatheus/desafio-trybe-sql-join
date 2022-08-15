@@ -520,3 +520,5 @@ Vamos bater um papo sobre SQL? Hora da aula ao vivo! Vamos para o Slack, onde o 
 - https://javascript.plainenglish.io/sql-understanding-joins-b5888eda54ae
 - https://www.devmedia.com.br/sql-join-entenda-como-funciona-o-retorno-dos-dados/31006
 - https://www.youtube.com/watch?v=165r4qUvp8Q
+- https://www.mysqltutorial.org/mysql-join/
+- https://dev.mysql.com/doc/refman/8.0/en/join.html
