@@ -84,7 +84,7 @@ ON t1.coluna_em_comum = t2.coluna_em_comum;
 
 Algumas tabelas que vamos usar do nosso banco de dados:
 
-[![teachers-subject-tribes-tables.png](https://i.postimg.cc/J0Mj9c5w/teachers-subject-tribes-tables.png)](https://postimg.cc/KkpKTTWQ)
+[![teachers-subject-tribes-tables.png](https://i.postimg.cc/vmKh3mqf/teachers-subject-tribes-tables.png)](https://postimg.cc/qt827pdv)
 
 Vamos exibir o primeiro nome do professor que ensina cada matéria:
 
@@ -125,9 +125,9 @@ vai exibir os dados da tabela da esquerda independente de haver algum dado em co
 
 [![left-join.png](https://i.postimg.cc/P5YN9t9H/left-join.png)](https://postimg.cc/ZWYTyhJs)
 
-Vale salientar que a tabela referente ao **LEFT JOIN** sempre será a após o **FROM**, mas para ficar claro a tradução de **LEFT** é esquerda e **RIGHT** direita. Veja abaixo como funciona na prática:
+Vale salientar que a tabela referente ao **LEFT JOIN** sempre será após o **FROM**, mas para ficar claro a tradução de **LEFT** é esquerda e **RIGHT** direita.
 
-<!-- TODO Essa parte ficou um pouco confusa -->
+#### Na prática:
 
 Essas são as tabelas do nosso banco de dados, vamos trabalhar com algumas delas abaixo:
 [![all-tables.png](https://i.postimg.cc/MGb4c9cF/all-tables.png)](https://postimg.cc/jW2vmQ4H)
@@ -176,7 +176,8 @@ Exemplo de saída:
 
 [![saida-right-join.png](https://i.postimg.cc/bwYPppcD/saida-right-join.png)](https://postimg.cc/qzFSGf74)
 
-<!-- TODO Talvez fazer um comentário sobre saida do right join -->
+Sendo assim, como é mostrado acima, o **RIGHT JOIN** irá listar todos os endereços mesmo que não tenha nenhum estudante sendo referenciado.
+
 #### Pra fixar:
 1. Faça uma query que exiba o **nome de todas as pessoas estudantes** e seu **número de telefone**
 2. Faça uma query que exiba o **nome de todos os professores** e seu **número de telefone**
@@ -185,7 +186,7 @@ Exemplo de saída:
 
 ### O que é SELF JOIN e quando utilizar
 
-A palavra **SELF** significa você mesmo, isso significa que faremos um **JOIN** na própria tabela que estamos manipulando.
+A tradução da palavra **SELF** é a própria pessoa, isso significa que faremos um **JOIN** na própria tabela que estamos manipulando.
 <!-- TODO Frase acima redundante, escrever melhor. -->
 
 [![homem-aranha-meme.jpg](https://i.postimg.cc/XY43s1Mn/homem-aranha-meme.jpg)](https://postimg.cc/SJTwsrNP)
@@ -198,10 +199,8 @@ FROM school.studants Studant
 INNER JOIN school.studants Buddie ON Studant.buddie_id = Buddie.id;
 ```
 
-Siim! Você não viu errado, o **SELF JOIN** na verdade é apenas um **INNER JOIN** na própria tabela. Mas também podemos apenas declarar
-a mesma tabela duas vezes, dessa forma:
-
-<!-- TODO Frase acima redundante, escrever melhor. -->
+Sim! Você não viu errado, o **SELF JOIN** na verdade é apenas um **INNER JOIN** na própria tabela. Mas também podemos declarar
+a tabela duas vezes, dessa forma:
 
 ```
 SELECT Studant.first_name, Studant.buddie_id, Buddie.first_name
@@ -211,7 +210,7 @@ WHERE Studant.buddie_id = Buddie.id;
 
 Exemplo de saída:
 
-[![saida-self-join.png](https://i.postimg.cc/TY8CMZ3v/saida-self-join.png)](https://postimg.cc/JtqbjYXp)
+[![saida-self-join.png](https://i.postimg.cc/pVzCJRD5/saida-self-join.png)](https://postimg.cc/8skL18XT)
 
 #### Pra fixar:
 1. Exiba o **nome completo** do **estudante** e do seu **parceiro**
@@ -222,15 +221,21 @@ Vamos bater um papo sobre SQL? Hora da aula ao vivo! Vamos para o Slack, onde o 
 
 ### Agora na prática
 
-1.
-2.
-3.
-4.
-5.
+⚠️ Atencão! Para fazer o exercicio será necessário a utilização do banco de dados [Trybe ~~is cool~~ School](https://sqldeploys.github.io/desafio-join/TRYBE-IS-ChOOL.sql).
+
+1. 
+2. 
+3. 
+4.  
+5. 
+6. 
+7. 
+8. 
 
 ### Bônus
 
-6.
+9. Exiba
+10. Exiba
 
 ## **Recursos Adicionais**
 
