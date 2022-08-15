@@ -134,7 +134,14 @@ INNER JOIN school.studants B ON S.buddie_id = B.id;
 3. Faça uma query que exiba **nome completo**, **cep**, **rua** e **número de telefone** de professores que **possuem** endereço e telefone.
 
 ```
-
+SELECT
+ CONCAT(T.first_name, ' ', T.last_name) nome_completo_professor,
+ A.cep,
+ A.street,
+ P.phone
+FROM school.teachers T
+INNER JOIN school.adresses A ON T.address_id = A.id
+INNER JOIN school.phones P ON T.phone_id = P.id;
 ```
 
 4. Faça uma query que exiba **quantos estudantes possuem endereço registrado**.
@@ -147,25 +154,55 @@ INNER JOIN school.adresses A ON S.address_id = A.id;
 5. Faça uma query que exiba o **nome completo do estudante**, **cep**, **rua**, **número**, **cidade** e **estado**.
 
 ```
-
+SELECT
+ CONCAT(S.first_name, ' ', S.last_name) nome_completo_estudante,
+ A.cep,
+ A.street,
+ A.number,
+ C.city,
+ STA.state
+FROM school.studants S
+INNER JOIN school.adresses A ON S.address_id = A.id
+INNER JOIN school.cities C ON A.city_id = C.id
+INNER JOIN school.states STA ON C.state_id = STA.id;
 ```
 
 6. Faça uma query que exiba **quantos estudantes residem por estado** em **ordem decrescente**.
 
 ```
-
+SELECT
+ STA.state,
+ STA.state_code,
+ COUNT(STA.id) AS quantidade_de_estudante_por_estado
+FROM school.studants S
+INNER JOIN school.adresses A ON S.address_id = A.id
+INNER JOIN school.cities C ON A.city_id = C.id
+INNER JOIN school.states STA ON C.state_id = STA.id
+GROUP BY C.state_id 
+ORDER BY quantidade_de_estudante_por_estado DESC;
 ```
 
 7. Faça uma query que exiba o **nome completo**, **cep**, **rua** e **número de telefone** de **todos** os **professores**.
 
 ```
-
+SELECT
+ CONCAT(T.first_name, ' ', T.last_name) nome_completo_professor,
+ A.cep,
+ A.street,
+ P.phone
+FROM school.teachers T
+LEFT JOIN school.adresses A ON T.address_id = A.id
+LEFT JOIN school.phones P ON T.phone_id = P.id;
 ```
 
 8. Faça uma query que liste todos os **números de telefone** do banco de dados e caso haja um professor remetente exiba: **número de telefone** e **nome completo** do professor.
 
 ```
-
+SELECT
+ P.phone,
+ CONCAT(T.first_name, ' ', T.last_name) nome_completo_professor
+FROM school.teachers T
+RIGHT JOIN school.phones P ON T.phone_id = P.id;
 ```
 #### Bônus
 
@@ -194,5 +231,12 @@ INNER JOIN school.countries CO ON STA.country_id = CO.id;
 10. Faça uma query que liste todos os **endereços** do banco de dados e caso haja um estudante remetente exiba **cep**, **rua**, **cidade**  e **nome completo** do estudante.
 
 ```
-
+SELECT
+ A.cep,
+ A.street,
+ C.city,
+ CONCAT(S.first_name, ' ', S.last_name) nome_completo_estudante
+FROM school.studants S
+RIGHT JOIN school.adresses A ON S.address_id = A.id 
+INNER JOIN school.cities C ON A.city_id = C.id;
 ```
